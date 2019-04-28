@@ -29,31 +29,41 @@ else
     u_sensor = None
     c_sensor = None
 
+u_sensor.mode='US-DIST-CM'
+
+units = us.units 
+
+distance = us.value()/10 
+
+
+c_sensor.mode='COL-COLOR'
 #========================================================================================= 
 def MoveForward(): 
-
-   motor_left.run_direct(duty_cycle_sp=75) 
-   motor_right.run_direct(duty_cycle_sp=75)
+    motor_left.run_direct(duty_cycle_sp=75) 
+    motor_right.run_direct(duty_cycle_sp=75)
 #========================================================================================= 
 def MoveBackward(): 
-
-   motor_left.run_direct(duty_cycle_sp=-75) 
-   motor_right.run_direct(duty_cycle_sp=-75) 
+    motor_left.run_direct(duty_cycle_sp=-75)
+    motor_right.run_direct(duty_cycle_sp=-75) 
 #========================================================================================= 
 def TurnLeft(): 
-
-   motor_left.run_direct(duty_cycle_sp=-75) 
-   motor_right.run_direct(duty_cycle_sp=75) 
+    motor_left.run_direct(duty_cycle_sp=-75) 
+    motor_right.run_direct(duty_cycle_sp=75) 
 #========================================================================================= 
 def TurnRight(): 
-
-   motor_left.run_direct(duty_cycle_sp=75) 
-   motor_right.run_direct(duty_cycle_sp=-75)
+    motor_left.run_direct(duty_cycle_sp=75) 
+    motor_right.run_direct(duty_cycle_sp=-75)
 #=========================================================================================
-
-def StopMotors()
+def StopMotors():
     motor_left.run_direct(duty_cycle_sp=0)
     motor_right.run_direct(duty_cycle_sp=0)
+#=========================================================================================
+def canMoveForward():
+    if distance <= 5:
+#=========================================================================================
+def isAtFinish():
+    if color = 1
+#=========================================================================================
 
 isDriving = False
 
